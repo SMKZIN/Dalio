@@ -14,3 +14,11 @@ model Hero {
   country String
   ability String
 }
+
+model Users {
+  id String @id @default(uuid())
+  age Int 
+  name String
+  email String @unique
+  password String
+}
