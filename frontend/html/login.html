@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="stylesheet" href="/dalio/frontend/css/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Entrar</h2>
+    <form action="/login" method="POST">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" name="username" required autocomplete="username" />
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password" />
+
+      <button type="submit">Login</button>
+    </form>
+    <p class="footer-text">Não tem uma conta? <a href="/dalio/frontend/html/register.html">Cadastre-se</a></p>
+  </div>
+</body>
+</html>

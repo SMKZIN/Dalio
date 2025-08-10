@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, HttpCode, Post, Put, Param } from '@nestjs/common';
+import { Body, Controller, Delete, HttpCode, Post, Put, Param, Get } from '@nestjs/common';
 import { PrismaService } from 'src/database/prisma.service';
 import { User } from 'src/dtos/create-user';
 import bcrypt from "bcrypt"
@@ -100,5 +100,12 @@ export class UsersController {
             const erro = error as Error
             return erro
         }
+    }
+
+    @Get()
+    @HttpCode(200)
+    async listUsers(){
+        const users = await this.prisma.users.findMany()
+        return users
     }
 }
