@@ -9,7 +9,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
       if (!name || !email || !password || isNaN(age)) {
         alert('Preencha todos os campos corretamente!');
         return;
-      }
+      };
 
       try {
         const response = await fetch('http://localhost:3000/users', { 

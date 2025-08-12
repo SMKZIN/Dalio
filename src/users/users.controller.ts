@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, HttpCode, Post, Put, Param, Get } from '@nestjs/common';
+import { Body, Controller, Delete, HttpCode, Post, Put, Param, Get, UnauthorizedException } from '@nestjs/common';
 import { PrismaService } from 'src/database/prisma.service';
 import { User } from 'src/dtos/create-user';
 import bcrypt from "bcrypt"
@@ -90,7 +90,7 @@ export class UsersController {
             }
 
             await this.prisma.users.update({
-                where: {id},
+                where: { id },
                 data: userEdited
             })
 
@@ -104,8 +104,44 @@ export class UsersController {
 
     @Get()
     @HttpCode(200)
-    async listUsers(){
+    async listUsers() {
         const users = await this.prisma.users.findMany()
         return users
+    }
+
+    @Post("login")
+    @HttpCode(200)
+    async loginUser(@Body() props: { email: string, password: string }) {
+        const { email, password } = props
+        const user = await this.prisma.users.findFirst({
+            where: { email }
+        })
+
+        if (!user) {
+            throw new UnauthorizedException("Invalid credentials")
+        }
+
+        const findPassword = await bcrypt.compare(password, user.password)
+
+        if (!findPassword) {
+            throw new UnauthorizedException("Invalid credentials")
+        }
+
+        try {
+            const newLogin = {
+                id: user.id,
+                email: user.email
+            }
+
+            return {
+                message: "Successful login!",
+                user: newLogin
+            }
+
+        } catch (error) {
+            const erro = error as Error
+            return erro
+        }
+
     }
 }
