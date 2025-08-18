@@ -9,27 +9,30 @@
 </head>
 <body>
   <div class="register-container">
-    <h2>Registrar</h2>
+    <img class="logo" src="/dalio/frontend/img/ChatGPT Image 17 de ago. de 2025, 22_28_18.png" alt="">
+    <h2 class="corText">Registrar</h2>
     <form id="registerForm">
-      <label for="name">Nome</label>
+      <label class="corText" for="name">Nome</label>
       <input type="text" id="name" name="name" required autocomplete="name" />
 
-      <label for="email">Email</label>
+      <label class="corText" for="email">Email</label>
       <input type="email" id="email" name="email" required autocomplete="email" />
 
-      <label for="password">Senha</label>
+      <label class="corText" for="password">Senha</label>
       <input type="password" id="password" name="password" required autocomplete="new-password" />
 
-      <label for="age">Idade</label>
+      <label class="corText" for="age">Idade</label>
       <input type="number" id="age" name="age" min="1" max="120" required />
 
       <button type="submit">Cadastrar</button>
     </form>
-    <p class="footer-text">Já tem uma conta? <a href="/dalio/frontend/html/login.html">Entrar</a></p>
+    <p class="corText footer-text">Já tem uma conta? <a href="/dalio/frontend/html/login.html">Entrar</a></p>
   </div>
+  <div id="toast" class="toast"></div>
 
-  <script src="/dalio/frontend/js/register.js">
-    
-  </script>
+<script src="/dalio/frontend/js/alert.js"></script>
+<script src="/dalio/frontend/js/register.js"></script>
+
 </body>
+
 </html>

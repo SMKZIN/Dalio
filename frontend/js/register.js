@@ -7,7 +7,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
       const age = parseInt(document.getElementById('age').value);
 
       if (!name || !email || !password || isNaN(age)) {
-        alert('Preencha todos os campos corretamente!');
+        alertCustom('Preencha todos os campos corretamente!');
         return;
       };
 
@@ -19,13 +19,13 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
         });
 
         if (response.ok) {
-          alert('Registro realizado com sucesso!');
+          alertCustom('Registro realizado com sucesso!');
           window.location.href = '/dalio/frontend/html/login.html';
         } else {
           const err = await response.json();
-          alert('Erro: ' + (err.message || 'Falha no registro'));
+          alertCustom('Erro: ' + (err.message || 'Falha no registro'));
         }
       } catch (error) {
-        alert('Erro de conexão: ' + error.message);
+        alertCustom('Erro de conexão: ' + error.message);
       }
     });

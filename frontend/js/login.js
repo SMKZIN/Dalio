@@ -5,7 +5,7 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
     const password = document.getElementById("password"). value.trim();
 
     if(!email || !password){
-        alert('Preencha todos os campos corretamente!');
+        alertCustom('Preencha todos os campos corretamente!');
         return;
     };
 
@@ -17,11 +17,11 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
         });
 
         if(response.ok){
-            alert('Login realizado com sucesso!');
+            alertCustom('Login realizado com sucesso!');
             return;
         }else {
           const err = await response.json();
-          alert('Erro: ' + (err.message || 'Falha no registro'));
+          alertCustom('Erro: ' + (err.message || 'Falha no registro'));
         }
       } catch (error) {
         alert('Erro de conexão: ' + error.message);
