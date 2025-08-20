@@ -18,6 +18,7 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
 
         if(response.ok){
             alertCustom('Login realizado com sucesso!');
+            window.location.href = "/frontend/html/index.html";
             return;
         }else {
           const err = await response.json();

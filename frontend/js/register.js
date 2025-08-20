@@ -20,7 +20,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
 
         if (response.ok) {
           alertCustom('Registro realizado com sucesso!');
-          window.location.href = '/dalio/frontend/html/login.html';
+          window.location.href = '/frontend/html/login.html';
         } else {
           const err = await response.json();
           alertCustom('Erro: ' + (err.message || 'Falha no registro'));

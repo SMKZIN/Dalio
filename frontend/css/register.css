@@ -1,62 +1,74 @@
 * {
   box-sizing: border-box;
 }
+
 body {
-  background: #6A4E77; 
+  background: #2AB8A6; 
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; 
   margin: 0;
+  padding: 1rem;
 }
+
 .register-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   background: white; 
-  padding: 2rem 3rem;
+  padding: 1.5rem 2rem; 
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  width: 320px;
+  width: 100%;
+  max-width: 360px; 
+  max-height: 90vh; 
 }
+
 .logo {
   align-self: center;
-  max-width: 100px;
+  max-width: 80px; 
   margin-bottom: 1rem;
 }
+
 h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; 
   color: #6A4E77; 
   text-align: center;
+  font-size: 1.5rem;
 }
+
 label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   font-weight: bold;
   color: #6A4E77; 
 }
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
   width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1.2rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   transition: border-color 0.3s;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: #fff;
   color: #333;
 }
+
 input:focus {
   border-color: #2AB8A6; 
   outline: none;
 }
+
 button {
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.6rem;
   background-color: #2AB8A6;
   border: none;
   border-radius: 6px;
@@ -66,26 +78,27 @@ button {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 button:hover {
   background-color: #F57C00; 
 }
+
 .footer-text {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #666;
 }
 
 .toast {
   display: flex;
   justify-content: center;
-
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #007bff; /* azul */
+  background-color: #007bff;
   color: white;
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   opacity: 0;
@@ -93,14 +106,22 @@ button:hover {
   transition: opacity 0.4s ease, transform 0.4s ease;
   font-family: Arial, sans-serif;
 }
+
 .toast.show {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(-10px);
 }
+
 .toast.error {
   background-color: #dc3545;
 }
+
 .toast.success {
   background-color: #28a745; 
+}
+
+#registerForm {
+  display: flex;
+  flex-direction: column;
 }
