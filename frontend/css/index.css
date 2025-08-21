@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     font-family: Arial, sans-serif;
     align-items: center;
+     background-color: #e0f7f5;
 }
 
 header {
@@ -26,7 +27,7 @@ nav {
     position: fixed;   
     bottom: 0;           
     border-radius: 50px;     
-    width: 30%;        
+    width: 45%;        
     background-color: #2AB8A6;
     display: flex;
     justify-content: center;
@@ -36,11 +37,14 @@ nav {
     z-index: 1000;
     margin-bottom: 12px;
     padding: 0 10px;
+    
 }
 
 .left {
     display: flex;
     justify-content: flex-start;
+    padding: 0;
+    margin-right: -1000000px;
 }
 
 .search {
@@ -48,6 +52,9 @@ nav {
     border-radius: 20px;
     border: none;
     outline: none;
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
 }
 
 .ident {
@@ -92,15 +99,91 @@ nav {
     padding: 20px; 
 }
 
+
+
 .divInf:not(:first-child)::before {
-    content: "";
-    position: absolute;
-    left: 0; 
-    top: 30%;
-    bottom: 30%;
-    width: 2px; 
-    background-color: rgba(255, 255, 255, 0.5);
+    width: 1px;
+    top: 25%;
+    bottom: 25%;
 }
+
+
+
+.interactions {
+    display: flex;
+    gap: 20px;
+    margin-left: 15px;
+}
+
+
+
+section {
+    width: 30%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-bottom: 120px; 
+    box-shadow: 0 50px 50px rgba(42, 184, 166, 0.1);
+    background: linear-gradient(to bottom, #f0f8f8, #ffffff);
+    border-radius: 12px;
+    border-top: 4px solid #2AB8A6; 
+}
+
+section div {
+  background-color: white;
+  border-radius: 16px; 
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(42, 184, 166, 0.15);
+  border: 1px solid rgba(42, 184, 166, 0.1);
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section div img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: block;
+}
+
+section div span {
+  font-weight: bold;
+  color: #2AB8A6;
+  display: block;
+  margin-bottom: 8px;
+}
+.interactions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  margin: 10px 0 0 0;
+}
+
+.iconInteract {
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.iconInteract:hover {
+    transform: scale(1.2);
+}
+
+.coment {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.coment:focus {
+    border-color: #2AB8A6;
+    box-shadow: 0 0 5px rgba(42,184,166,0.3);
+}
+
 
 @media (max-width: 768px) {
     nav {

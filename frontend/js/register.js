@@ -20,7 +20,9 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
 
         if (response.ok) {
           alertCustom('Registro realizado com sucesso!');
-          window.location.href = '/frontend/html/login.html';
+           setTimeout(() => {
+              window.location.href = "/frontend/html/index.html";
+            }, 3000)
         } else {
           const err = await response.json();
           alertCustom('Erro: ' + (err.message || 'Falha no registro'));
