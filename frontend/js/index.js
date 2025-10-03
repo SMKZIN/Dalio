@@ -21,3 +21,20 @@ document.querySelectorAll(".ver-comentarios").forEach(btn => {
   });
 });
 
+// Pega todos os comentários dentro do bloco
+const comentarios = document.querySelectorAll(".comentarios-content .titulo");
+let indice = 0;
+
+function mostrarComentario() {
+  comentarios.forEach(c => c.classList.remove("ativo"));
+  comentarios[indice].classList.add("ativo");
+  indice = (indice + 1) % comentarios.length;
+}
+
+// Mostra o primeiro
+if (comentarios.length > 0) {
+  mostrarComentario();
+  setInterval(mostrarComentario, 3000); // troca a cada 3s
+}
+
+
