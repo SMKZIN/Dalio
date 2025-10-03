@@ -44,7 +44,7 @@ nav {
     position: fixed;   
     bottom: 0;           
     border-radius: 50px;     
-    width: 45%;        
+    width: 30%;        
     background-color: #2AB8A6;
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@ nav {
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1); 
     z-index: 1000;
     margin-bottom: 12px;
-    padding: 0 10px;
+    padding:20px;
     
 }
 
@@ -98,7 +98,6 @@ nav {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    gap: 0; 
 }
 
 .sizeText {
@@ -239,17 +238,156 @@ section div span {
     
 }
 
-.sla{
+
+.font{
     color: #2AB8A6;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+.sla{
+    color: #2AB8A6;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 5px;
+}
+.titulo {
+   display: flex;
+   flex-direction: column;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   width: 100%;
+   border-bottom: 1px solid gray; 
+}
 
-.titulo{
+.traco{
+    display: flex;
+    margin-top: -20px;
+    border-bottom: 2px solid #2AB8A6;
+    width: 100%;
+}
+
+.noticias{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.timeline{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.fofocas{
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    width: 400px;
+}
+
+.tituloNoticia{
     display: flex;
     flex-direction: row;
-    
-   
+    gap: 15px;
 }
+
+.navigation{
+    width: 30px;
+    height: auto;
+}
+
+.tituloSugestoes{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: grey;
+
+}
+
+.sugestoes{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 80%;
+    width: 400px;
+}
+
+.perfil{
+    width:50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.perfilnome{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nomee{
+    display: flex;
+    gap:12px;
+}
+
+.nomeCLi{
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     color: grey;
+     text-align: center;
+     align-self: center;
+     font-size: large;
+}
+
+.sugestoesTITULO{
+    border-bottom: 2px solid #2AB8A6;
+}
+
+.adicionarAmigo{
+    width: 30px;
+}
+
+.adic{
+    margin-top: 5px;
+}
+
+.comentariu{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+}
+
+.comentarios-content {
+  display: none;
+  margin-top: 10px;
+}
+
+.comentarios--cliente.active .comentarios-content {
+  display: block;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  font-weight: bold;
+  color: #007bff;
+}
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.comentario-preview {
+  position: relative;
+  color: gray;
+  font-size: 14px;
+  margin: 5px 0;
+  max-height: 40px; /* limita altura do preview */
+  overflow: hidden;
+}
+
+.comentario-preview::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to top, white, transparent); /* FADE */
+}
+
 
 
 
