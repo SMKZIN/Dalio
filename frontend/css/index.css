@@ -410,9 +410,9 @@ section div span {
 }
 
 .search:focus {
-  border-color: #2e7d32;       /* verde mais escuro no foco */
+  border-color: #2e7d32;     
   box-shadow: 0 0 8px rgba(46, 125, 50, 0.5); 
-  background-color: #ffffff;   /* fica branco ao focar */
+  background-color: #ffffff; 
 }
 
 

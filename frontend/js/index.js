@@ -6,22 +6,35 @@ enjoy.addEventListener("click", () => {
     liked = !liked;
 
     if(liked){
-        enjoy.src = "/frontend/img/liked.png";
+        enjoy.src = "/frontend/img/coracaoPreenc.png";
     } else {
-        enjoy.src = "/frontend/img/heart.png"
+        enjoy.src = "/frontend/img/heart_10969405.png"
     }
+});
+
+document.querySelectorAll(".enjoy").forEach(enjoy => {
+  let liked = false;
+
+  enjoy.addEventListener("click", () => {
+    liked = !liked;
+
+    if (liked) {
+      enjoy.src = "/frontend/img/coracaoPreenc.png";
+    } else {
+      enjoy.src = "/frontend/img/heart_10969405.png";
+    }
+  });
 });
 
 document.querySelectorAll(".ver-comentarios").forEach(btn => {
   btn.addEventListener("click", () => {
     const container = btn.closest(".comentarios--cliente");
     container.classList.add("active");
-    btn.style.display = "none"; // esconde o "Ver todos os comentários"
-    container.querySelector(".comentario-preview").style.display = "none"; // esconde o preview apagado
+    btn.style.display = "none";
+    container.querySelector(".comentario-preview").style.display = "none"; 
   });
 });
 
-// Pega todos os comentários dentro do bloco
 const comentarios = document.querySelectorAll(".comentarios-content .titulo");
 let indice = 0;
 
@@ -31,10 +44,9 @@ function mostrarComentario() {
   indice = (indice + 1) % comentarios.length;
 }
 
-// Mostra o primeiro
 if (comentarios.length > 0) {
   mostrarComentario();
-  setInterval(mostrarComentario, 3000); // troca a cada 3s
+  setInterval(mostrarComentario, 3000); 
 }
 
 
